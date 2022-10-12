@@ -1,11 +1,9 @@
 import { animate, animateOpen, animateClose } from "./helpers" 
 
 const modal = () => {
-    console.log('fuck');
     const modal = document.querySelector('.modal-callback'),
           modalOverlay = document.querySelector('.modal-overlay'),
           buttons = document.querySelectorAll('.fancyboxModal');
-          console.log(buttons);
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             animate({

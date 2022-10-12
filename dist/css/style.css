@@ -276,11 +276,22 @@ a.absolute {
 .modal-close {
 	width: 25px;
 	height: 25px;
+	opacity: 0.5;
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	cursor: pointer;
 }
+
+.modal-close:hover {
+	transform: translate(-5%, 5%);
+	opacity: 1;
+	width: 27px;
+	height: 27px;
+	transition: all ease 0.3s
+}
+
+
 .modal-callback {
 	display: none;
 	position: fixed;
@@ -849,14 +860,37 @@ hr.white {
 	background-color: #fff !important;
 }
 .top-slider {
+	position: relative;
 	overflow: hidden;
 	height: 450px;
 }
 .top-slider .item {
+	display: flex;
 	overflow: hidden;
 	height: 450px;
-	position: relative;
+	width: 100%;
+	position: absolute !important;
+	z-index: 1;
+	opacity: 0;
+	transform: translate(0,100%);
+	transition: opacity 0.5s ease-in, transform 1s ease;
 }
+
+/* .top-slider .item:first-child {
+	opacity: 1;
+} */
+
+.top-slider .item__active {
+	opacity: 1;
+	transform: translate(0,0);
+	transition: opacity 0.7s ease-in, transform 0.6s ease;
+}
+
+.top-slider .item__inactive {
+	opacity: 0;
+	transition: all 2s ease;
+}
+
 .top-slider .item:before {
 	content: "";
 	display: block;
@@ -932,8 +966,8 @@ video#video_background {
 		height: 520px;
 	}
 	.top-slider .table {
-		opacity: 0;
-		visibility: hidden;
+		/* opacity: 0; */
+		/* visibility: hidden; */
 		-webkit-transform: scale(1.5);
 		-ms-transform: scale(1.5);
 		-o-transform: scale(1.5);
