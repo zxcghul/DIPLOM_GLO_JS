@@ -1121,6 +1121,12 @@ video#video_background {
 	justify-content: center;
 }
 
+.services-arrow *:active {
+	width: 27px;
+	height: 27px;
+	transition: 0.08s all ease;
+}
+
 .arrow-right,
 .arrow-left {
 	width: 30px;
