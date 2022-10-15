@@ -5,8 +5,6 @@ const slider = () => {
     let interval;
 
 
-    console.log(slides);
-
     const prevSlide = (elems, index, strClass) => {
         elems[index].classList.remove(strClass);
     }
